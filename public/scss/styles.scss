@@ -1,0 +1,293 @@
+@import './reset/reset';
+
+span {
+  font-size: 30px;
+}
+
+$white: #FFFFFF;
+$purple: #8682BA;
+$darkgrey: #abacaa;
+$lightgrey: #F7F7F6;
+$blue: #3065FF;
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%image-style {
+  display: block;
+  width: 50px;
+  padding: 20px 0;
+  @media (min-width: 1000px) {
+    width: 70px;
+  }
+}
+
+%title-style {
+  text-transform: uppercase;
+  color: $purple;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 12px 0;
+}
+
+%description-style {
+  color: $darkgrey;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 12px 0;
+  width: 80%;
+  line-height: 20px;
+}
+
+%dollarsign-style {
+  padding: 3px 0 0 0;
+  color: $purple;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+%price-style {
+  color: $purple;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+%month-style {
+  color: $purple;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+%mobile-desktop-tv-snippet {
+  &:hover {
+    background-color: $lightgrey;
+  }
+  @extend %flex-center;
+  flex-direction: column;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  @media (min-width: 1000px) {
+    width: 33%;
+  }
+}
+
+%snippet-like-mobile-desktop-tv {
+  @extend %flex-center;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+%pricewrapper-snippet {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.skyengapp {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #8AA8DB;
+  padding: 80px 0;
+  @media (min-width: 1000px) {
+    padding: 0 150px;
+  }
+  @extend %flex-center;
+
+  .skyengapp-block {
+    @extend %flex-center;
+    flex-direction: column;
+    background-color: $white;
+    padding: 20px;
+    width: 80%;
+    @media (min-width: 1000px) {
+      width: auto;
+    }
+    border-radius: 5px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+    .skyengapp-block-wrapper {
+      @media (min-width: 1000px) {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+      }
+      .skyengapp-block-wrapper-mobile {
+        @extend %mobile-desktop-tv-snippet;
+        .skyengapp-block-wrapper-mobile__image {
+          @extend %image-style;
+        }
+        .skyengapp-block-wrapper-mobile__title {
+          @extend %title-style;
+        }
+        .skyengapp-block-wrapper-mobile__description {
+          @extend %description-style;
+        }
+
+        .skyengapp-block-wrapper-mobile-pricewrapper {
+          @extend %pricewrapper-snippet;
+          .skyengapp-block-wrapper-mobile-pricewrapper__dollarsign {
+            @extend %dollarsign-style;
+          }
+          .skyengapp-block-wrapper-mobile-pricewrapper-pricepermonth {
+            @extend %price-style;
+            .skyengapp-block-wrapper-mobile-pricewrapper-pricepermonth__month {
+              @extend %month-style;
+            }
+          }
+        }
+
+      }
+
+      .skyengapp-block-wrapper-desktop {
+        @extend %mobile-desktop-tv-snippet;
+        .skyengapp-block-wrapper-desktop__image {
+          @extend %image-style;
+        }
+        .skyengapp-block-wrapper-desktop__title {
+          @extend %title-style;
+        }
+        .skyengapp-block-wrapper-desktop__description {
+          @extend %description-style;
+        }
+        .skyengapp-block-wrapper-desktop-pricewrapper {
+          @extend %pricewrapper-snippet;
+          .skyengapp-block-wrapper-desktop-pricewrapper__dollarsign {
+            @extend %dollarsign-style;
+          }
+          .skyengapp-block-wrapper-desktop-pricewrapper-pricepermonth {
+            @extend %price-style;
+            .skyengapp-block-wrapper-desktop-pricewrapper-pricepermonth__month {
+              @extend %month-style;
+            }
+          }
+        }
+      }
+
+      .skyengapp-block-wrapper-tv {
+        @extend %mobile-desktop-tv-snippet;
+        .skyengapp-block-wrapper-tv__image {
+          @extend %image-style;
+        }
+        .skyengapp-block-wrapper-tv__title {
+          @extend %title-style;
+        }
+        .skyengapp-block-wrapper-tv__description {
+          @extend %description-style;
+        }
+        .skyengapp-block-wrapper-tv-pricewrapper {
+          @extend %pricewrapper-snippet;
+          .skyengapp-block-wrapper-tv-pricewrapper__dollarsign {
+            @extend %dollarsign-style;
+          }
+          .skyengapp-block-wrapper-tv-pricewrapper-pricepermonth {
+            @extend %price-style;
+            .skyengapp-block-wrapper-tv-pricewrapper-pricepermonth__month {
+              @extend %month-style;
+            }
+          }
+        }
+      }
+
+
+    }
+
+    .skyengapp-block__button {
+      background-color: $blue;
+      width: 50%;
+      text-align: center;
+      color: $white;
+      padding: 14px;
+      border-radius: 5px;
+      font-size: 12px;
+      cursor: pointer;
+      margin: 20px 0;
+      @media (min-width: 1000px) {
+        width: 20%;
+      }
+    }
+
+  }
+
+}
+
+
+.insertion {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  top: 0;
+  left: 0;
+  @extend %flex-center;
+
+  .insertion-block {
+    position: relative;
+    @extend %flex-center;
+    flex-direction: column;
+    background-color: $white;
+    padding: 20px;
+    width: 90%;
+    @media (min-width: 1000px) {
+      width: 30%;
+      padding: 30px;
+    }
+    border-radius: 5px;
+    @extend %snippet-like-mobile-desktop-tv;
+    .insertion-block__close {
+      width: 14px;
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      cursor: pointer;
+    }
+    .insertion-block__confirmation {
+      font-weight: 500;
+      padding: 10px 0;
+    }
+    .insertion-block__image {
+      @extend %image-style;
+    }
+    .insertion-block__title {
+      @extend %title-style;
+    }
+    .insertion-block__description {
+      @extend %description-style;
+    }
+    .insertion-block-pricewrapper {
+      @extend %pricewrapper-snippet;
+      .insertion-block-pricewrapper__dollarsign {
+        @extend %dollarsign-style;
+      }
+      .insertion-block-pricewrapper-pricepermonth {
+        @extend %price-style;
+        .insertion-block-pricewrapper-pricepermonth__month {
+          @extend %month-style;
+        }
+      }
+    }
+
+    .insertion-block__button {
+      background-color: $blue;
+      width: 50%;
+      text-align: center;
+      color: $white;
+      padding: 14px;
+      border-radius: 5px;
+      font-size: 12px;
+      cursor: pointer;
+      margin: 20px 0;
+    }
+  }
+
+}
+
